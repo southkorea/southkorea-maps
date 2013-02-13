@@ -44,7 +44,7 @@ TBD
 [Lucy Park](mailto:lucypark@popong.com), [team POPONG](http://en.popong.com)
 
 ### Data Source
-Data source for the Shapefiles is the [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw) provided by the Korea Statistical GIS.
+Data source for the raw Shapefiles is the [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw) provided by [KOSTAT (Statistics Korea)](http://kostat.go.kr).
 
 ### License
-TBD
+No license specified by KOSTAT for the raw Shapefiles.
