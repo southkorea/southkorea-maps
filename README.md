@@ -10,6 +10,7 @@ This repo hosts South Korea administrative division geodata in open formats that
 The following formats are available:
 
 - [ESRI Shapefile](http://en.wikipedia.org/wiki/Shapefile)
+- [SVG](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics)
 - [GeoJSON](http://geojson.org) (In preparation)
 - [TopoJSON](http://github.com/mbostock/topojson) (In preparation)
 
@@ -22,11 +23,13 @@ South Korean administrative divisions are consisted of three levels:
 
 ## Development Notes
 
-
 ### ESRI Shapefile
 The ESRI Shapefiles are generated with [QGIS](http://www.qgis.org/).
 The [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) is set to WGS84.
 The simplified shapefiles are generated with [MapShaper](http://mapshaper.com/test/MapShaper.swf), using the Special Visvalingam algorithm with 100% simplification.
+
+### SVG
+SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
 
 ### GeoJSON
 TBD
