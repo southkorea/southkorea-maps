@@ -45,10 +45,10 @@ South Korean administrative divisions are consisted of three levels:
 ## Copyright and License
 
 ### Contributors
-[Team POPONG](http://en.popong.com), [Justin Meyers](justinelliotmeyers@gmail.com)
+[Team POPONG](http://en.popong.com), [Justin Meyers](mailto:justinelliotmeyers@gmail.com)
 
 ### Data Source
-Data source for the raw Shapefiles is the [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw) provided by [KOSTAT (Statistics Korea)](http://kostat.go.kr).
+[Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw) by [KOSTAT](http://kostat.go.kr).
 
 ### License
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
