@@ -26,6 +26,7 @@ South Korean administrative divisions are consisted of three levels:
 ### ESRI Shapefile
 - The [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) is set to WGS84.
 - Simplified shapefiles are generated with [MapShaper](http://mapshaper.com/test/MapShaper.swf), using the Special Visvalingam algorithm with 100% simplification.
+- Projection files were provided by [KOSTAT](http://sgis.kostat.go.kr/contents/support/support_01_closeup.jsp?sgis_board_seq=344&code=N).
 
 ### SVG
 SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
@@ -36,14 +37,14 @@ TBD
 ### TopoJSON
 TBD
 
-
 ## Examples
 TBD
 
 ## Copyright and License
 
-### Author
-[Lucy Park](mailto:lucypark@popong.com), [team POPONG](http://en.popong.com)
+### Contributors
+[Team POPONG](http://en.popong.com), [Justin Meyers](justinelliotmeyers@gmail.com)
+
 ### Data Source
 Data source for the raw Shapefiles is the [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw) provided by [KOSTAT (Statistics Korea)](http://kostat.go.kr).
 
