@@ -17,16 +17,15 @@ The following formats are available:
 ## Description
 
 South Korean administrative divisions are consisted of three levels:
-- [Provincial level](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Provincial_level_divisions): Special City(특별시), Metropolitan City(광역시), Province(도), Special Self-governing Province(특별자치도), Special Self-governing City(특별자치시)
-- [Municipal level](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Municipal_level_divisions): Si (시, city), Gun (군, county), Gu (구, district)
-- [Submunicipal level](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Submunicipal_level_divisions): Eup (읍, town), Myeon (면, township), Dong (동, neighborhood), Ri (리, village)
+- [Provincial level (시도)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Provincial_level_divisions): Special City(특별시), Metropolitan City(광역시), Province(도), Special Self-governing Province(특별자치도), Special Self-governing City(특별자치시)
+- [Municipal level (시군구)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Municipal_level_divisions): Si (시, city), Gun (군, county), Gu (구, district)
+- [Submunicipal level (읍면동)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Submunicipal_level_divisions): Eup (읍, town), Myeon (면, township), Dong (동, neighborhood), Ri (리, village)
 
 ## Development Notes
 
 ### ESRI Shapefile
-The ESRI Shapefiles are generated with [QGIS](http://www.qgis.org/).
-The [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) is set to WGS84.
-The simplified shapefiles are generated with [MapShaper](http://mapshaper.com/test/MapShaper.swf), using the Special Visvalingam algorithm with 100% simplification.
+- The [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) is set to WGS84.
+- Simplified shapefiles are generated with [MapShaper](http://mapshaper.com/test/MapShaper.swf), using the Special Visvalingam algorithm with 100% simplification.
 
 ### SVG
 SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
@@ -45,9 +44,9 @@ TBD
 
 ### Author
 [Lucy Park](mailto:lucypark@popong.com), [team POPONG](http://en.popong.com)
-
 ### Data Source
 Data source for the raw Shapefiles is the [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw) provided by [KOSTAT (Statistics Korea)](http://kostat.go.kr).
 
 ### License
-No license specified by KOSTAT for the raw Shapefiles.
+- Raw data: No license specified by KOSTAT for the shapefiles.
+- Converted data: <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
