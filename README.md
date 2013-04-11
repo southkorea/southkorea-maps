@@ -60,7 +60,6 @@ South Korean administrative divisions are consisted of three levels:
 #### Shapefile
 - Downloaded from [KOSTAT](http://www.gadm.org/country) (March, 2013).
 - The [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) is set to WGS84.
-- Simplified shapefiles are generated with [MapShaper](http://mapshaper.com/test/MapShaper.swf), using the Special Visvalingam algorithm with 100% simplification.
 - Projection files were provided [here](http://sgis.kostat.go.kr/contents/support/support_01_closeup.jsp?sgis_board_seq=344&code=N).
 
 #### KML
