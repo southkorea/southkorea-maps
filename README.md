@@ -21,12 +21,12 @@ The following data are available:
     <tr>
         <td><a href="http://en.wikipedia.org/wiki/Shapefile">ESRI Shapefile</a></td>
         <td>1</td>
-        <td>0</td>
+        <td>1</td>
     </tr>
     <tr>
-        <td><a href="http://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a></td>
+        <td><a href="http://en.wikipedia.org/wiki/Keyhole_Markup_Language">KML</a>/KMZ</td>
         <td>1</td>
-        <td>0</td>
+        <td>1</td>
     </tr>
     <tr>
         <td><a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a></td>
@@ -42,6 +42,11 @@ The following data are available:
         <td><a href="http://github.com/mbostock/topojson">TopoJSON</a></td>
         <td>0</td>
         <td>0</td>
+    </tr>
+    <tr>
+        <td>RData</td>
+        <td>0</td>
+        <td>1</td>
     </tr>
 </tbody>
 </table>
@@ -63,14 +68,13 @@ South Korean administrative divisions are consisted of three levels:
 - Projection files were provided [here](http://sgis.kostat.go.kr/contents/support/support_01_closeup.jsp?sgis_board_seq=344&code=N).
 
 #### KML
-- Created from shapefiles with `ogr2ogr -f kml [filename].kml [filename].shp`.
+Created from shapefiles with `ogr2ogr -f kml [filename].kml [filename].shp`.
 
 #### SVG
-- SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
+SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
 
 ### GADM
-#### Shapefile
-- Downloaded from [GADM](http://gadm.org/country) (March 25, 2013).
+To download data, run `make get_gadm`.
 
 ## Data Sources
 Data is acquired from the following sources:
@@ -86,3 +90,6 @@ Data is acquired from the following sources:
 
 ### License
 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
+
+- KOSTAT: Free to share or remix.
+- GADM:  For non-commercial purposes only. Redistribution not allowed.
