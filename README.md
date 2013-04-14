@@ -58,12 +58,12 @@ Numbers are data sizes in MB, in the following order: All, Provinces, Municipali
     <tr>
         <td>GeoJSON</td>
         <td>0</td>
-        <td>0</td>
+        <td>15.2, 15.4, 16.1, 0</td>
     </tr>
     <tr>
         <td>TopoJSON</td>
         <td>0</td>
-        <td>0</td>
+        <td>1.4, 1.4, 1.5, 0</td>
     </tr>
     <tr>
         <td>RData</td>
@@ -86,8 +86,18 @@ Created from shapefiles with `ogr2ogr -f kml [filename].kml [filename].shp`.
 #### SVG
 SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
 
+
 ### GADM
-To download data, run `make get_gadm`.
+#### Shapefile, KMZ, RData
+To download data files, run:
+
+    make get_gadm
+
+#### GeoJSON
+Created from shapefiles with `ogr2ogr -f geojon [filename]-geo.json [filename].shp`.
+
+#### TopoJSON
+Created from GeoJSON files with `topojson -o [filename]-topo.json [filename]-geo.json`.
 
 
 ## Copyright and License
