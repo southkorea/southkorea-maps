@@ -63,7 +63,7 @@ Numbers are data sizes in MB, in the following order: All, Provinces, Municipali
     <tr>
         <td>TopoJSON</td>
         <td>0</td>
-        <td>1.4, 1.4, 1.5, 0</td>
+        <td>1.5, 1.5, 1.6, 0</td>
     </tr>
     <tr>
         <td>RData</td>
