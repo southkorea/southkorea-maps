@@ -94,10 +94,10 @@ To download data files, run:
     make get_gadm
 
 #### GeoJSON
-Created from shapefiles with `ogr2ogr -f geojon [filename]-geo.json [filename].shp`.
+Created from shapefiles with `ogr2ogr -f geojson [filename]-geo.json [filename].shp`.
 
 #### TopoJSON
-Created from GeoJSON files with `topojson -o [filename]-topo.json [filename]-geo.json`.
+Created from GeoJSON files with `topojson [filename]-geo.json -o [filename]-topo.json --properties`.
 
 
 ## Copyright and License
