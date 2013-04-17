@@ -7,7 +7,7 @@ This repo hosts South Korea administrative division geodata in open formats that
 ## Description
 ### Formats
 The following formats are available: 
-[`shp`](https://github.com/teampopong/southkorea-maps/blob/master/gadm/gadm.py), 
+[`shp`](http://en.wikipedia.org/wiki/Shapefile),
 [`kml/kmz`](http://en.wikipedia.org/wiki/Keyhole_Markup_Language),
 [`svg`](http://en.wikipedia.org/wiki/Scalable_Vector_Graphics), 
 [`GeoJSON`](http://geojson.org),
@@ -17,7 +17,7 @@ and `RData`.
 ### Sources 
 Data is acquired from the following sources:
 
-- [KOSTAT](http://www.gadm.org/country): [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
+- [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
 - [GADM](http://www.gadm.org): [Global administrative areas](http://www.gadm.org/country)
 
 ### Levels
