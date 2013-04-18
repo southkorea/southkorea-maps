@@ -34,9 +34,9 @@ Numbers are data sizes in MB, in the following order: All, Provinces, Municipali
 <table>
 <thead>
     <tr>
-        <td>Format \ Source</td>
-        <td>KOSTAT</td>
-        <td>GADM</td>
+        <th>Format \ Source</th>
+        <th>KOSTAT</th>
+        <th>GADM</th>
     </tr>
 </thead>
 <tbody>
