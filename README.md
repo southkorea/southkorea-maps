@@ -99,6 +99,9 @@ Created from shapefiles with `ogr2ogr -f geojson [filename]-geo.json [filename].
 #### TopoJSON
 Created from GeoJSON files with `topojson [filename]-geo.json -o [filename]-topo.json --properties`.
 
+## Examples
+- [TopoJSON Provinces](http://bl.ocks.org/e9t/5409484)
+- [TopoJSON Municipalities](http://bl.ocks.org/e9t/5409518)
 
 ## Copyright and License
 ### Contributors
