@@ -19,6 +19,7 @@ Data is acquired from the following sources:
 
 - [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
 - [GADM](http://www.gadm.org): [Global administrative areas](http://www.gadm.org/country)
+- [POPONG](http://popong.com): Hand-traced (for production)
 
 ### Levels
 South Korean administrative divisions are consisted of three levels:
@@ -29,7 +30,7 @@ South Korean administrative divisions are consisted of three levels:
 
 ### Data
 The following data are available.<br>
-Numbers are data sizes in MB, in the following order: All, Provinces, Municipalities, Submunicipalities:
+Numbers are data sizes in the following order: Country border, Provinces, Municipalities, Submunicipalities.
 
 <table>
 <thead>
@@ -37,6 +38,7 @@ Numbers are data sizes in MB, in the following order: All, Provinces, Municipali
         <th>Format \ Source</th>
         <th>KOSTAT</th>
         <th>GADM</th>
+        <th>POPONG</th>
     </tr>
 </thead>
 <tbody>
@@ -44,34 +46,42 @@ Numbers are data sizes in MB, in the following order: All, Provinces, Municipali
         <td>ESRI Shapefile</td>
         <td>0, 9.7, 19.4, 47.6</td>
         <td>5.5, 5.5, 5.8, 0</td>
+        <td>0</td>
     </tr>
     <tr>
         <td>KML/KMZ</td>
         <td>0, 23.7, 47.4, 116.9</td>
         <td>1.5, 1.5, 1.7, 0</td>
+        <td>0</td>
     </tr>
     <tr>
         <td>SVG</td>
         <td>0, 0.3, 0.5, 1.5</td>
         <td>0</td>
+        <td>0, 14KB, 0, 0</td>
     </tr>
     <tr>
         <td>GeoJSON</td>
         <td>0</td>
         <td>15.2, 15.4, 16.1, 0</td>
+        <td>0</td>
     </tr>
     <tr>
         <td>TopoJSON</td>
         <td>0</td>
         <td>1.5, 1.5, 1.6, 0</td>
+        <td>0</td>
     </tr>
     <tr>
         <td>RData</td>
         <td>0</td>
         <td>1.0, 1.0, 1.2, 0</td>
+        <td>0</td>
     </tr>
 </tbody>
 </table>
+
+<p>(Units in MBs if not noted.)</p>
 
 ## Development Notes
 ### KOSTAT
@@ -100,15 +110,14 @@ Created from shapefiles with `ogr2ogr -f geojson [filename]-geo.json [filename].
 Created from GeoJSON files with `topojson [filename]-geo.json -o [filename]-topo.json --properties`.
 
 ## Examples
-- [TopoJSON Provinces](http://bl.ocks.org/e9t/5409484)
-- [TopoJSON Municipalities](http://bl.ocks.org/e9t/5409518)
+- Provinces: [GADM TopoJSON](http://bl.ocks.org/e9t/5409484), [POPONG SVG](http://bl.ocks.org/e9t/5712545)
+- Municipalities: [GADM TopoJSON](http://bl.ocks.org/e9t/5409518)
 
 ## Copyright and License
 ### Contributors
 [Team POPONG](http://en.popong.com), [Justin Meyers](mailto:justinelliotmeyers@gmail.com)
 
 ### License
-<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/88x31.png" /></a>
-
 - KOSTAT: Free to share or remix.
 - GADM:  For non-commercial purposes only. Redistribution not allowed.
+- POPONG: <a rel="license" href="http://creativecommons.org/licenses/by/2.0/kr/deed.en_US "><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a> ([한국어](http://creativecommons.org/licenses/by/2.0/kr/))
