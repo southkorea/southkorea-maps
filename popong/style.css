@@ -1,0 +1,19 @@
+text {
+    font-family: NanumGothic;
+    font-size: 6px;
+    pointer-events: none;
+}
+
+path {
+    fill: #EEE;
+    stroke: #c9c9c9;
+
+}
+path.region {
+    cursor: pointer;
+
+}
+
+path.region:hover {
+    fill: rgb(176,198,185);
+}
