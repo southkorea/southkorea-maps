@@ -121,4 +121,4 @@ Created from GeoJSON files with `topojson [filename]-geo.json -o [filename]-topo
 ### License
 - KOSTAT: Free to share or remix.
 - GADM:  For non-commercial purposes only. Redistribution not allowed.
-- POPONG: <a rel="license" href="http://creativecommons.org/licenses/by/2.0/kr/deed.en_US "><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a> ([한국어](http://creativecommons.org/licenses/by/2.0/kr/))
+- POPONG: <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
