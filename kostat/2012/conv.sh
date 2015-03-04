@@ -16,12 +16,13 @@ do
     ogr2ogr -f kml -simplify $KML_SIMPLIFY kml/$t-simple.kml shp/$t.shp # creates topology errors
 
     echo "* Generate GeoJSON"
-    rm -f json/$t-geo.json # ERROR 6: The GeoJSON driver does not overwrite existing files
-    ogr2ogr -f geojson json/$t-geo.json shp/$t.shp -lco COORDINATE_PRECISION=$GEOJSON_DECIMALS
+    rm -f json/$t-geo*simple.json # ERROR 6: The GeoJSON driver does not overwrite existing files
+    ogr2ogr -f geojson json/$t-geo.json shp/$t.shp
+    ogr2ogr -f geojson json/$t-geo-simple.json shp/$t.shp -lco COORDINATE_PRECISION=$GEOJSON_DECIMALS
 
     echo "* Generate TopoJSON"
     topojson -p -o json/$t-topo.json -- json/$t-geo.json 
-    topojson -p -q $TOPOJSON_QUANTIFY --simplify-proportion $TOPOJSON_SIMPLIFY -o json/$t-topo-simple.json -- shp/$t.shp
+    topojson -p -q $TOPOJSON_QUANTIFY --simplify-proportion $TOPOJSON_SIMPLIFY -o json/$t-topo-simple.json -- json/$t-geo.json
 
     echo ""
 done
