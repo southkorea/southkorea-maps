@@ -23,8 +23,6 @@ Data is acquired from the following sources:
 
 ### Levels
 South Korean administrative divisions are consisted of three levels:
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 - [Provinces (시도)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Provincial_level_divisions): Special City(특별시), Metropolitan City(광역시), Province(도), Special Self-governing Province(특별자치도), Special Self-governing City(특별자치시)
 - [Municipalities (시군구)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Municipal_level_divisions): Si (시, city), Gun (군, county), Gu (구, district)
@@ -85,73 +83,9 @@ Numbers are data sizes in the following order: Country border, Provinces, Munici
 </table>
 
 <p>(Units in MBs if not noted.)</p>
-=======
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
-=======
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
 
-- [Provinces (시도)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Provincial_level_divisions): Special City(특별시), Metropolitan City(광역시), Province(도), Special Self-governing Province(특별자치도), Special Self-governing City(특별자치시)
-- [Municipalities (시군구)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Municipal_level_divisions): Si (시, city), Gun (군, county), Gu (구, district)
-- [Submunicipalities (읍면동)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Submunicipal_level_divisions): Eup (읍, town), Myeon (면, township), Dong (동, neighborhood), Ri (리, village)
-- Precinct: TBA
+## Development Notes
 
-### Data
-The following data are available.<br>
-Numbers are data sizes in the following order: Country border, Provinces, Municipalities, Submunicipalities.
-
-<table>
-<thead>
-    <tr>
-        <th>Format \ Source</th>
-        <th>KOSTAT</th>
-        <th>GADM</th>
-        <th>POPONG</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>ESRI Shapefile</td>
-        <td>0, 9.7, 19.4, 47.6</td>
-        <td>5.5, 5.5, 5.8, 0</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>KML/KMZ</td>
-        <td>0, 23.7, 47.4, 116.9</td>
-        <td>1.5, 1.5, 1.7, 0</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>SVG</td>
-        <td>0, 0.3, 0.5, 1.5</td>
-        <td>0</td>
-        <td>0, 14KB, 0, 0</td>
-    </tr>
-    <tr>
-        <td>GeoJSON</td>
-        <td>0</td>
-        <td>15.2, 15.4, 16.1, 0</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>TopoJSON</td>
-        <td>0</td>
-        <td>1.5, 1.5, 1.6, 0</td>
-        <td>0</td>
-    </tr>
-    <tr>
-        <td>RData</td>
-        <td>0</td>
-        <td>1.0, 1.0, 1.2, 0</td>
-        <td>0</td>
-    </tr>
-</tbody>
-</table>
-
-<p>(Units in MBs if not noted.)</p>
-
-<<<<<<< HEAD
-<<<<<<< HEAD
 ### Requirements
 
     brew install gdal
@@ -185,35 +119,9 @@ Numbers are data sizes in the following order: Country border, Provinces, Munici
         cd kostat/2012
         ./conv.sh
 
-
-### GADM
-
-#### Shapefile, KMZ, RData
-To download data files and convert their formats, run:
-=======
-=======
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
-## Development Notes
-### KOSTAT
-#### Shapefile
-- Downloaded on March, 2013.
-- The [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) is set to WGS84.
-- Projection files were provided [here](http://sgis.kostat.go.kr/contents/support/support_01_closeup.jsp?sgis_board_seq=344&code=N).
-
-#### KML
-Created from shapefiles with `ogr2ogr -f kml [filename].kml [filename].shp`.
-
-#### SVG
-SVGs are generated with QGIS's [SimpleSVG plugin](http://plugins.qgis.org/plugins/simplesvg/).
-
-
 ### GADM
 #### Shapefile, KMZ, RData
 To download data files, run:
-<<<<<<< HEAD
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
-=======
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
 
     make get_gadm
 
@@ -229,15 +137,8 @@ Created from GeoJSON files with `topojson [filename]-geo.json -o [filename]-topo
 
 ## Copyright and License
 ### Contributors
-<<<<<<< HEAD
-<<<<<<< HEAD
-[Lucy Park](mailto:lucypark@popong.com), [Justin Meyers](mailto:justinelliotmeyers@gmail.com)
-=======
-[Team POPONG](http://en.popong.com), [Justin Meyers](mailto:justinelliotmeyers@gmail.com)
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
-=======
-[Team POPONG](http://en.popong.com), [Justin Meyers](mailto:justinelliotmeyers@gmail.com)
->>>>>>> d019fb152a20839d343d71ab6ec95b497d93539e
+- Lucy Park ([Team POPONG](/teampopong))
+- [Justin Meyers](mailto:justinelliotmeyers@gmail.com)
 
 ### License
 - KOSTAT: Free to share or remix.
