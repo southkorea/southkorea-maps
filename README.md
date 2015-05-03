@@ -17,7 +17,7 @@ and `RData`.
 ### Sources 
 Data is acquired from the following sources:
 
-- [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
+- [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011|2012](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
 - [GADM](http://www.gadm.org): [Global administrative areas](http://www.gadm.org/country)
 - [POPONG](http://popong.com): Hand-traced (for production)
 
@@ -118,6 +118,9 @@ Numbers are data sizes in the following order: Country border, Provinces, Munici
 
         cd kostat/2012
         ./conv.sh
+
+1. Simplify `GeoJSON`s with http://mapshaper.org/ (with Visvalingam / weighted area, 1% simplification)
+
 
 ### GADM
 #### Shapefile, KMZ, RData
