@@ -6,17 +6,15 @@ import urllib
 import zipfile
 from glob import glob
 
-BASEURL = 'http://www.filefactory.com/file'
-BASEPATH = './gadm'
+BASEDIR = './gadm'
 FILEMAP = {
-    'png': [('skorea.png','/hfyvqc8b5fh/n/KOR_adm_png')],
-    'shp': [('skorea-shp.zip','/2nb1ulzzb92l/n/KOR_adm_zip')],
-    'kmz': [('skorea.kmz','/29hktwve5h3r/n/KOR_adm0_kmz'),
-            ('skorea-provinces.kmz','/1ugqc403utmn/n/KOR_adm1_kmz'),
-            ('skorea-municipalities.kmz','/3o3nktmlobzb/n/KOR_adm2_kmz')],
-    'r'  : [('skorea.RData','/3zwuqmw62v2f/n/KOR_adm0_RData'),
-            ('skorea-provinces.RData','/181g2vdo0a0f/n/KOR_adm1_RData'),
-            ('skorea-municipalities.RData','/vubfyio3upz/n/KOR_adm2_RData')]
+    'shp': [('skorea-shp.zip','http://biogeo.ucdavis.edu/data/gadm2/shp/KOR_adm.zip')],
+    'kmz': [('skorea.kmz','http://biogeo.ucdavis.edu/data/gadm2/kmz/KOR_adm0.kmz'),
+            ('skorea-provinces.kmz','http://biogeo.ucdavis.edu/data/gadm2/kmz/KOR_adm1.kmz'),
+            ('skorea-municipalities.kmz','http://biogeo.ucdavis.edu/data/gadm2/kmz/KOR_adm2.kmz')],
+    'r'  : [('skorea.RData','http://biogeo.ucdavis.edu/data/gadm2/R/KOR_adm0.RData'),
+            ('skorea-provinces.RData','http://biogeo.ucdavis.edu/data/gadm2/R/KOR_adm1.RData'),
+            ('skorea-municipalities.RData','http://biogeo.ucdavis.edu/data/gadm2/R/KOR_adm2.RData')]
     }
 NAMEMAP = {
     'KOR_adm0': 'skorea',
@@ -24,36 +22,37 @@ NAMEMAP = {
     'KOR_adm2': 'skorea-municipalities'
     }
 
-def download(f, opt):
-    path = "%s/%s/" % (BASEPATH, opt)
+def joinpath(pathlist):
+    return os.path.sep.join(pathlist)
+
+def download(f, path):
     if not os.path.exists(path):
         os.makedirs(path)
 
-    print "Downloading '%s'..." % f[0]
-    urllib.urlretrieve(BASEURL+f[1], path+f[0])
+    url, zipped = f[1], joinpath([path, f[0]])
+    print "Downloading '%s' to '%s'..." % (url, zipped)
+    urllib.urlretrieve(url, zipped)
 
-def extract(opt):
-    path = '%s/%s/' % (BASEPATH, opt)
+def extract(f, path):
+    zipped = joinpath([path, f[0]])
+    print "Extracting '%s'..." % zipped
+    source = zipfile.ZipFile(zipped, 'r')
+    for name in source.namelist():
+        source.extract(name, path)
+    source.close()
+    os.remove(zipped)
 
-    for z in glob(path+'*.zip'):
-        print "Extracting '%s'..." % z
-        source = zipfile.ZipFile(z, 'r')
-        for name in source.namelist():
-            source.extract(name, path)
-        source.close()
-        os.remove(z)
-
-def rename(opt):
-    path = '%s/%s/' % (BASEPATH, opt)
+def rename(path):
     for f in os.listdir(path):
         if f.startswith("KOR_adm"):
             name, ext = os.path.splitext(f)
-            os.rename(path+f, path+NAMEMAP[name]+ext)
+            os.rename('/'.join([path, f]), '/'.join([path, NAMEMAP[name]+ext]))
 
 if __name__=='__main__':
-    for opt in FILEMAP:
-        for f in FILEMAP[opt]:
-            download(f, opt)
-            extract(opt)
-            rename(opt)
+    for ext in FILEMAP:
+        path = joinpath([BASEDIR, ext])
+        for f in FILEMAP[ext]:
+            download(f, path)
+            if ext=='shp': extract(f, path)
+            rename(path)
     print "Done."
