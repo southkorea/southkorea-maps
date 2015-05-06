@@ -3,6 +3,7 @@ South Korea Maps
 
 This repo hosts South Korea administrative division geodata in open formats that can be used to build static and interactive maps (e.g. with [D3](http://d3js.org)), and was inspired by [swiss-maps](https://github.com/interactivethings/swiss-maps).
 
+To see maps for Seoul, go to https://github.com/southkorea/seoul-maps
 
 ## Description
 ### Formats
@@ -33,6 +34,7 @@ South Korean administrative divisions are consisted of three levels:
 ### Data
 The following data are available.<br>
 Numbers are data sizes in Megabytes in the following order: Country border, Provinces, Municipalities, Submunicipalities.
+Numbers in parentheses are simplified versions of each format.
 
 <table>
 <thead>
