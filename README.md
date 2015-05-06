@@ -111,12 +111,16 @@ Numbers in parentheses are simplified versions of each format.
 
         - 2011 version: Downloaded on Mar 2013.
         - 2012 version: Downloaded on Feb 2015.
-1. Download and install [QGIS](http://qgis.org). With QGIS, 1) Change layer encoding from UTF-8 to EUC-KR, then 2) load each `shp` file and `save as`, in order to convert CRS and data encoding as shown in the image below.
+1. Download and install [QGIS](http://qgis.org). With QGIS for each shapefile:
+    1. Change layer encoding to EUC-KR<br>
+        <img src="static/qgis-1.png" width="400px">
+        <img src="static/qgis-2.png" width="500px">
+    2. `Save as`, with CRS and data encoding as shown in the image below.<br>
+        <img src="static/qgis-3.png" width="400px">
+        <img src="static/saveas.png" width="300px">
 
-    <img src="static/saveas.png" width="300px">
-
-    - Change [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) from [Korean 1985 / Modified Central, EPSG:5174](http://epsg.io/5174) to [WGS84, EPSG:4326](http://epsg.io/4326)
-    - Change data encoding from System to UTF8
+        - Change [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) from [Korean 1985 / Modified Central, EPSG:5174](http://epsg.io/5174) to [WGS84, EPSG:4326](http://epsg.io/4326)
+        - Change data encoding from System to UTF8
 
 1. Change `dbf` codebooks (encodings)
 
