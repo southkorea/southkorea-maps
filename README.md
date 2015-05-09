@@ -18,7 +18,7 @@ and `RData`.
 ### Sources 
 Data is acquired from the following sources:
 
-- [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011|2012](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
+- [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011|2012}2013](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
 - [GADM](http://www.gadm.org): [Global administrative areas](http://www.gadm.org/country)
 - [POPONG](http://popong.com): Hand-traced (for production)
 - [Wikimedia](http://wikimedia.org): [Administrative divisions map of South Korea](http://commons.wikimedia.org/wiki/File:Administrative_divisions_map_of_South_Korea.svg)
@@ -40,7 +40,7 @@ Numbers in parentheses are simplified versions of each format.
 <thead>
     <tr>
         <th>Format \ Source</th>
-        <th>KOSTAT (2012)</th>
+        <th>KOSTAT (2013)</th>
         <th>GADM</th>
         <th>POPONG</th>
         <th>Wikimedia</th>
@@ -49,14 +49,14 @@ Numbers in parentheses are simplified versions of each format.
 <tbody>
     <tr>
         <td>ESRI Shapefile</td>
-        <td>0, 9.3, 19, 45</td>
+        <td>0, 9.6, 19, 46</td>
         <td>5.5, 5.5, 5.8, 0</td>
         <td>0</td>
         <td>0</td>
     </tr>
     <tr>
         <td>KML/KMZ</td>
-        <td>0, 23, 45, 112</td>
+        <td>0</td>
         <td>1.5, 1.5, 1.7, 0</td>
         <td>0</td>
         <td>0</td>
@@ -70,14 +70,14 @@ Numbers in parentheses are simplified versions of each format.
     </tr>
     <tr>
         <td>GeoJSON</td>
-        <td>0, 12, 24, 79<br>(0, 0.28, 0.62, 0, 0)</td>
+        <td>0, 31, 52, 0<br>(0, 0.148, 0.364, 1.7)</td>
         <td>15, 15, 16, 0</td>
         <td>0</td>
         <td>0</td>
     </tr>
     <tr>
         <td>TopoJSON</td>
-        <td>0, 0.9, 1.5, 4.9<br>(0, 0.06, 0.14, 0, 0)</td>
+        <td>0, 1.2, 2.0, 4.9<br>(0, 0.032, 0.0.96, 0.812)</td>
         <td>1.5, 1.5, 1.6, 0</td>
         <td>0</td>
         <td>0</td>
@@ -100,7 +100,7 @@ Numbers in parentheses are simplified versions of each format.
     brew install gdal
     npm install -g topojson
 
-### KOSTAT (2012)
+### KOSTAT (2013)
 1. [Download Shapefiles](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
     - Projection files are provided [here](http://sgis.kostat.go.kr/contents/support/support_01_closeup.jsp?sgis_board_seq=344&code=N). Otherwise, copy the snippet below and save to a separate `prj` file having the same name as the `shp` file.
 
@@ -111,6 +111,8 @@ Numbers in parentheses are simplified versions of each format.
 
         - 2011 version: Downloaded on Mar 2013.
         - 2012 version: Downloaded on Feb 2015.
+        - 2013 version: Downloaded on May 2015.
+
 1. Download and install [QGIS](http://qgis.org). With QGIS for each shapefile:
     1. Change layer encoding to EUC-KR<br>
         <img src="static/qgis-1.png" width="400px">
@@ -122,15 +124,10 @@ Numbers in parentheses are simplified versions of each format.
         - Change [CRS](http://en.wikipedia.org/wiki/Coordinate_reference_system) from [Korean 1985 / Modified Central, EPSG:5174](http://epsg.io/5174) to [WGS84, EPSG:4326](http://epsg.io/4326)
         - Change data encoding from System to UTF8
 
-1. Change `dbf` codebooks (encodings)
+1. Convert `shp` to GeoJSON, TopoJSON
 
-        cd kostat/2012
-        ./conv.py
-
-1. Convert `shp` to KML, GeoJSON, TopoJSON
-
-        cd kostat/2012
-        ./conv.sh
+        ogr2ogr -f geojson [geojson_file] [shp_file]
+        topojson -p -o [topojson_file] [geojson_file]
 
 1. Simplify `GeoJSON`s with http://mapshaper.org/ (with Visvalingam / weighted area, 1% simplification)
 
