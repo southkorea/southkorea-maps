@@ -56,7 +56,7 @@ Numbers in parentheses are simplified versions of each format.
     </tr>
     <tr>
         <td>KML/KMZ</td>
-        <td>0</td>
+        <td>0, 0.16, 0.452, 2.8</td>
         <td>1.5, 1.5, 1.7, 0</td>
         <td>0</td>
         <td>0</td>
@@ -131,6 +131,9 @@ Numbers in parentheses are simplified versions of each format.
 
 1. Simplify `GeoJSON`s with http://mapshaper.org/ (with Visvalingam / weighted area, 1% simplification)
 
+1. Convert simplifies `GeoJSON`s to `KML`
+
+        ogr2ogr -f kml [simplified_geojson_file] [kml_file]
 
 ### GADM
 #### Shapefile, KMZ, RData
@@ -151,6 +154,7 @@ To download file, run:
     wget http://upload.wikimedia.org/wikipedia/commons/7/77/Administrative_divisions_map_of_South_Korea.svg
 
 ## Examples
+- [대한민국 시군구 지도 (KOSTAT KML, 2013)](https://www.google.com/fusiontables/DataSource?docid=1feTg5bOzs23Y3OxTeyu5QWMK0FaABm_ow9e7Pdni#map:id=3)<br><img src="static/fusiontables.png" width="200px">
 - [우리나라 시군구별 인구밀도 시각화 (KOSTAT TopoJSON, 2012)](http://bl.ocks.org/e9t/55699e9fa8c3eb7fe40c)<br><img src="static/choropleth.png" width="200px">
 - [우리나라 도시별 인구수 시각화 (KOSTAT TopoJSON, 2012)](http://bl.ocks.org/e9t/826b20ae75b331f56b4e)<br><img src="static/bubble.png" width="200px">
 - [시도 시각화 (POPONG SVG)](http://bl.ocks.org/e9t/5712545)
