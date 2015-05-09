@@ -154,12 +154,12 @@ To download file, run:
     wget http://upload.wikimedia.org/wikipedia/commons/7/77/Administrative_divisions_map_of_South_Korea.svg
 
 ## Examples
-- [대한민국 시군구 지도 (KOSTAT KML, 2013)](https://www.google.com/fusiontables/DataSource?docid=1feTg5bOzs23Y3OxTeyu5QWMK0FaABm_ow9e7Pdni#map:id=3)<br><img src="static/fusiontables.png" width="200px">
-- [우리나라 시군구별 인구밀도 시각화 (KOSTAT TopoJSON, 2012)](http://bl.ocks.org/e9t/55699e9fa8c3eb7fe40c)<br><img src="static/choropleth.png" width="200px">
-- [우리나라 도시별 인구수 시각화 (KOSTAT TopoJSON, 2012)](http://bl.ocks.org/e9t/826b20ae75b331f56b4e)<br><img src="static/bubble.png" width="200px">
-- [시도 시각화 (POPONG SVG)](http://bl.ocks.org/e9t/5712545)
-- [시도 시각화 (GADM TopoJSON)](http://bl.ocks.org/e9t/5409484)
-- [시군구 시각화 (GADM TopoJSON)](http://bl.ocks.org/e9t/5409518)
+- [대한민국 시군구 지도](https://www.google.com/fusiontables/DataSource?docid=1feTg5bOzs23Y3OxTeyu5QWMK0FaABm_ow9e7Pdni#map:id=3) ([KOSTAT KML, 2013](https://github.com/southkorea/southkorea-maps/blob/master/kostat/2013/kml/skorea_provinces_simple.kml))<br><img src="static/fusiontables.png" width="200px">
+- [우리나라 시군구별 인구밀도 시각화](http://bl.ocks.org/e9t/55699e9fa8c3eb7fe40c) ([KOSTAT TopoJSON, 2012](https://github.com/southkorea/southkorea-maps/blob/master/kostat/2012/json/municipalities-topo-simple.json))<br><img src="static/choropleth.png" width="200px">
+- [우리나라 도시별 인구수 시각화](http://bl.ocks.org/e9t/826b20ae75b331f56b4e) ([KOSTAT TopoJSON, 2012](https://github.com/southkorea/southkorea-maps/blob/master/kostat/2012/json/provinces-topo-simple.json))<br><img src="static/bubble.png" width="200px">
+- [시도 시각화](http://bl.ocks.org/e9t/5712545) ([POPONG SVG](https://github.com/southkorea/southkorea-maps/blob/master/popong/skorea-provinces-v3.1.svg))
+- [시도 시각화](http://bl.ocks.org/e9t/5409484) ([GADM TopoJSON](https://github.com/southkorea/southkorea-maps/blob/master/gadm/json/skorea-provinces-topo.json))
+- [시군구 시각화](http://bl.ocks.org/e9t/5409518) ([GADM TopoJSON](https://github.com/southkorea/southkorea-maps/blob/master/gadm/json/skorea-municipalities-topo.json))
 - ...add yours to this list!
 
 ## Copyright and License
