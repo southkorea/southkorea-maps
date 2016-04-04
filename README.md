@@ -153,22 +153,24 @@ To download file, run:
 
     wget http://upload.wikimedia.org/wikipedia/commons/7/77/Administrative_divisions_map_of_South_Korea.svg
 
+
 ### Precinct
-1. Get precinct raw table (국회의원지역선거구구역표) and store it as text file `popong/precinct/precianct_table_20.txt`.
-1. Create mappings from each municipality/submunicipality In the table to code in the kostat map file by:
+1. Get a precinct raw table file (국회의원지역선거구구역표) and store it as text file like `popong/precinct/precianct_table_20.txt`.
+2. The next step is to create a mapping from each municipality/submunicipality in the table to a code in the kostat map file.
+
+        cd popong/precinct
+        python create_mapping_precinct_to_map.py
+
+    - But, if you do not have an up-to-date map file (e.g., the most recent one was created in 2013), you need to define exception cases (e.g., submunicipality can be renamed or splitted) on the `mismatch_case_precinct_map.py` file before you run the `create_mapping_precinct_to_map.py` file.
+    - Once the code is successfully run, a geojson file containing a list of submunicipalities, each with the corresponding precinct will be created.
+3. We can now create a precinct map by merging submunicipalities into precincts using mapshaper or similar tools.
+
+        mapshaper merge_ready_submunicipalities_into_precinct_20.json -dissolve precinct_no copy-fields=precinct_name,province -o assembly-precinct-20-geo.json
+
+    - You might want to create TopoJSON from GeoJSON
+    - To make the size of data smaller and make boundaries prettier, you can simplify it. The simplified versions in this repository were created by creating the simplified version of submunicipality file before we run `create_mapping_precinct_to_map.py` file.
 ```
-cd popong/precinct
-python create_mapping_precinct_to_map.py
-```
-1. If you do not have a up-to-date map file, you need to define exception cases in `mismatch_case_precinct_map.py` before you run the above file.
-1. Merge municipalities into precincts using mapshaper or similar tools:
-```
-mapshaper merge_ready_submunicipalities_into_precinct_20.json -dissolve precinct_no copy-fields=precinct_name,province -o assembly-precinct-20-geo.json
-```
-1. Might want to create TopoJSON from GeoJSON
-1. The simplified versions in the repository were created by creating the simplified version of submunicipality file before:
-```
-topojson -p --simplify-proportion 0.4 -o submunicipalities-topo-simplified.json submunicipalities-topo.json
+        topojson -p --simplify-proportion 0.4 -o submunicipalities-topo-simplified.json submunicipalities-topo.json
 ```
 
 ## Examples
