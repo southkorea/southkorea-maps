@@ -154,7 +154,8 @@ To download file, run:
     wget http://upload.wikimedia.org/wikipedia/commons/7/77/Administrative_divisions_map_of_South_Korea.svg
 
 
-### Precinct
+### POPONG
+#### Precinct
 1. Get a precinct raw table file (국회의원지역선거구구역표) and store it as text file like `popong/precinct/precianct_table_20.txt`.
 2. The next step is to create a mapping from each municipality/submunicipality in the table to a code in the kostat map file.
 
