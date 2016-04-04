@@ -20,7 +20,7 @@ Data is acquired from the following sources:
 
 - [KOSTAT](http://kostat.go.kr): [Administrative division geodata for Census (센서스용 행정구역경계), 2011|2012}2013](http://sgis.kostat.go.kr/statbd/statbd_03.vw)
 - [GADM](http://www.gadm.org): [Global administrative areas](http://www.gadm.org/country)
-- [POPONG](http://popong.com): Hand-traced (for production)
+- [POPONG](http://popong.com): National Assembly Precinct (선거구), Hand-traced (for production)
 - [Wikimedia](http://wikimedia.org): [Administrative divisions map of South Korea](http://commons.wikimedia.org/wiki/File:Administrative_divisions_map_of_South_Korea.svg)
 
 ### Levels
@@ -29,7 +29,7 @@ South Korean administrative divisions are consisted of three levels:
 - [Provinces (시도)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Provincial_level_divisions): Special City(특별시), Metropolitan City(광역시), Province(도), Special Self-governing Province(특별자치도), Special Self-governing City(특별자치시)
 - [Municipalities (시군구)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Municipal_level_divisions): Si (시, city), Gun (군, county), Gu (구, district)
 - [Submunicipalities (읍면동)](http://en.wikipedia.org/wiki/Administrative_divisions_of_South_Korea#Submunicipal_level_divisions): Eup (읍, town), Myeon (면, township), Dong (동, neighborhood), Ri (리, village)
-- Precinct (선거구): TBA
+- Precinct (선거구): 19, 20대 국회 지역구
 
 ### Data
 The following data are available.<br>
@@ -153,10 +153,30 @@ To download file, run:
 
     wget http://upload.wikimedia.org/wikipedia/commons/7/77/Administrative_divisions_map_of_South_Korea.svg
 
+### Precinct
+1. Get precinct raw table (국회의원지역선거구구역표) and store it as text file `popong/precinct/precianct_table_20.txt`.
+1. Create mappings from each municipality/submunicipality In the table to code in the kostat map file by:
+```
+cd popong/precinct
+python create_mapping_precinct_to_map.py
+```
+1. If you do not have a up-to-date map file, you need to define exception cases in `mismatch_case_precinct_map.py` before you run the above file.
+1. Merge municipalities into precincts using mapshaper or similar tools:
+```
+mapshaper merge_ready_submunicipalities_into_precinct_20.json -dissolve precinct_no copy-fields=precinct_name,province -o assembly-precinct-20-geo.json
+```
+1. Might want to create TopoJSON from GeoJSON
+1. The simplified versions in the repository were created by creating the simplified version of submunicipality file before:
+```
+topojson -p --simplify-proportion 0.4 -o submunicipalities-topo-simplified.json submunicipalities-topo.json
+```
+
 ## Examples
 - [대한민국 시군구 지도](https://www.google.com/fusiontables/DataSource?docid=1feTg5bOzs23Y3OxTeyu5QWMK0FaABm_ow9e7Pdni#map:id=3) ([KOSTAT KML, 2013](https://github.com/southkorea/southkorea-maps/blob/master/kostat/2013/kml/skorea_provinces_simple.kml))<br><img src="static/fusiontables.png" width="200px">
 - [우리나라 시군구별 인구밀도 시각화](http://bl.ocks.org/e9t/55699e9fa8c3eb7fe40c) ([KOSTAT TopoJSON, 2012](https://github.com/southkorea/southkorea-maps/blob/master/kostat/2012/json/municipalities-topo-simple.json))<br><img src="static/choropleth.png" width="200px">
 - [우리나라 도시별 인구수 시각화](http://bl.ocks.org/e9t/826b20ae75b331f56b4e) ([KOSTAT TopoJSON, 2012](https://github.com/southkorea/southkorea-maps/blob/master/kostat/2012/json/provinces-topo-simple.json))<br><img src="static/bubble.png" width="200px">
+- [19대 국회 지역구 지도](http://bl.ocks.org/minsukkahng/79c06b46ae545d1fbdf6297bd283b7d3) (POPONG TopoJSON)<br><img src="static/precinct-map-19.png" width="200px">
+- [20대 국회 지역구 지도](http://bl.ocks.org/minsukkahng/6d9c3609e042592ec0f2f4edf8cd9103) (POPONG TopoJSON)
 - [시도 시각화](http://bl.ocks.org/e9t/5712545) ([POPONG SVG](https://github.com/southkorea/southkorea-maps/blob/master/popong/skorea-provinces-v3.1.svg))
 - [시도 시각화](http://bl.ocks.org/e9t/5409484) ([GADM TopoJSON](https://github.com/southkorea/southkorea-maps/blob/master/gadm/json/skorea-provinces-topo.json))
 - [시군구 시각화](http://bl.ocks.org/e9t/5409518) ([GADM TopoJSON](https://github.com/southkorea/southkorea-maps/blob/master/gadm/json/skorea-municipalities-topo.json))
